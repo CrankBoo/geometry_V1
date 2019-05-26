@@ -25,3 +25,5 @@ bin/tester : test/main.o
 
 test/main.o: test/main.c
 	gcc -Wall -Werror -c -I party -I src test/main.c -o test/main.o
+=======
+>>>>>>> 7819caa665b2a94fcbc3315f36aab3fef66e01b7

@@ -15,5 +15,4 @@ build/%.o : src/%.cpp
 
 .PHONY : clean
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE) $(DEPENDENCIES) 
-
+	rm -f $(OBJECTS) $(EXECUTABLE) $(DEPENDENCIES)

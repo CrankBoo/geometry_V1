@@ -15,5 +15,13 @@ build/%.o : src/%.cpp
 
 .PHONY : clean
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE) $(DEPENDENCIES) 
+	rm -f $(OBJECTS) $(EXECUTABLE) $(DEPENDENCIES)
 
+.PHONY :test
+test: bin/tester
+
+bin/tester : test/main.o 
+	gcc -Wall -Werror test/main.o -o bin/tester -lm
+
+test/main.o: test/main.c
+	gcc -Wall -Werror -c -I party -I src test/main.c -o test/main.o

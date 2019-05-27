@@ -8,7 +8,7 @@ DEPENDENCIES = $(patsubst $(addprefix build/, %.o), $(addprefix build/, %.d), $(
 all : $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE) : $(OBJECTS)
-	$(CC) $^ -o $@ -std=c++11
+$(CC) $^ -o $@ -std=c++11
 
 build/%.o : src/%.cpp
 	$(CC) $(CFLAGS) $< -o $@ -std=c++11
@@ -25,5 +25,3 @@ bin/tester : test/main.o
 
 test/main.o: test/main.c
 	gcc -Wall -Werror -c -I party -I src test/main.c -o test/main.o
-=======
->>>>>>> 7819caa665b2a94fcbc3315f36aab3fef66e01b7
